@@ -19,22 +19,18 @@ public class MyMatrix {
 		System.out.println(rows1);
 		System.out.println(cols1);
 		int[][] multipliedMatrix = new int[rows][cols1];
-		int c = 0;
-		for(int i=0; i<cols1; i++) {
-			for(int j=0; j<rows1; j++) {
-				int f = 0;
+		for(int c=0; c<cols1; c++) {
+			for(int f=0; f<rows1; f++) {
 				System.out.println("c: " + c);
-				for(int m=0; m<rows; m++) {
+				for(int i=0; i<rows; i++) {
 					int sum = 0;
 					System.out.println("f: " + f);
-					for(int n=0; n<cols; n++) {
-						sum += matrix[m][n] * matrix1[j][i];
+					for(int j=0; j<cols; j++) {
+						sum += matrix[i][j] * matrix1[f][c];
 					}
 					multipliedMatrix[f][c] = sum;
-					f++;
 				}
 			}
-			c++;
 		}
 		return multipliedMatrix;
 		}
